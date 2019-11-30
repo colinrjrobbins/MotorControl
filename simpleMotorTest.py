@@ -27,7 +27,7 @@ pwm.start(0)
 
 # button initialation
 GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUB_DOWN)
+GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 GPIO.add_event_detect(10, GPIO.RISING, callback=emergency_button)
 GPIO.add_event_detect(11, GPIO.RISING, callback=reset_button)
