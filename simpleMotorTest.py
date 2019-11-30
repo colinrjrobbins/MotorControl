@@ -42,3 +42,7 @@ GPIO.output(12, True)
 time.sleep(2)
 
 GPIO.output(12, False)
+
+pwm.stop()
+
+GPIO.cleanup()
