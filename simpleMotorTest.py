@@ -17,6 +17,7 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 
 # enable and rotation initialization
+GPIO.setup(12, GPIO.OUT)
 pwm = GPIO.PWM(12, 100) # enable
 GPIO.setup(13, GPIO.OUT) # ctrclockwise rotation
 GPIO.setup(15, GPIO.OUT) # clockwise rotation
