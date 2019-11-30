@@ -4,7 +4,7 @@
 # FIO1 - Pin 13 // Counter Clockwise Rotation
 # FIO0 - Pin 15 // Clockwise Rotation
 
-from RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time
 
 def emergency_button(channel):
