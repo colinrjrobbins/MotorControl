@@ -15,6 +15,7 @@ def emergency_button(channel):
     GPIO.output(13, True)
     GPIO.output(15, True)
     password = "banana"
+    check = 0
     while check != 1:
         inputPass = input("Enter Password: ")
         if inputPass == password:
