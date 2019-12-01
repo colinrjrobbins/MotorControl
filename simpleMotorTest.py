@@ -9,11 +9,7 @@
 import RPi.GPIO as GPIO
 import time
 
-def emergency_button(channel):
-    print("\nEmergency Stop")
-    GPIO.output(12, False)
-    GPIO.output(13, True)
-    GPIO.output(15, True)
+def passwordLock():
     password = "banana"
     check = 0
     while check != 1:
@@ -24,6 +20,13 @@ def emergency_button(channel):
             print("Incorrect Password, try again.")
             check = 0
 
+def emergency_button(channel):
+    print("\nEmergency Stop")
+    GPIO.output(12, False)
+    GPIO.output(13, True)
+    GPIO.output(15, True)
+    passwordLock()
+    
 def reset_button(channel):
     print("Reset Button")
     
