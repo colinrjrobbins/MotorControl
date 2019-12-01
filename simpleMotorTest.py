@@ -44,10 +44,11 @@ while True:
     print("2 - Turn Counter Clockwise")
     print("3 - Turn Clockwise")
     print("4 - Change speed 50")
-    print("5 - Change speed 75")
-    print("6 - Change speed 100")
-    print("7 - Turn Off")
-    print("8 - Exit Program")
+    print("5 - Change speed 25")
+    print("6 - Change speed 10")
+    print("7 - Change speed 100")
+    print("8 - Turn Off")
+    print("9 - Exit Program")
     check = int(input("Option ==>"))
 
     if check == 1:
@@ -65,15 +66,18 @@ while True:
         print("50 Speed...")
         pwm.ChangeDutyCycle(50)
     elif check == 5:
-        print("75 Speed...")
+        print("25 Speed...")
         pwm.ChangeDutyCycle(75)
     elif check == 6:
-        print("100 Speed")
-        pwm.ChangeDutyCycle(100)
+        print("10 Speed")
+        pwm.ChangeDutyCycle(90)
     elif check == 7:
+        print("100 Speed")
+        pwm.ChangeDutyCycle(0)
+    elif check == 8:
         print("Turning off...")
         GPIO.output(12, False)
-    elif check == 8:
+    elif check == 9:
         print("Exiting...")
         GPIO.output(12, False)
         GPIO.cleanup()
