@@ -1,8 +1,8 @@
 # FIO4 - Pin 10 RPI // Emergency Or Reset
 # FIO3 - Pin 11 // Emergency or Reset
-# FIO2 - Pin 12 // Clockwise Rotation
+# FIO2 - Pin 12 // Enable signal
 # FIO1 - Pin 13 // Counter Clockwise Rotation
-# FIO0 - Pin 15 // Enable signal
+# FIO0 - Pin 15 // Clockwise Rotation
 # VS - Pin 2 // 5V in
 # GND - Pin 6 // Ground
 
@@ -21,7 +21,7 @@ GPIO.setmode(GPIO.BOARD)
 
 # enable and rotation initialization
 GPIO.setup(12, GPIO.OUT)
-pwm = GPIO.PWM(15, 100) # enable
+pwm = GPIO.PWM(12, 100) # enable
 GPIO.setup(13, GPIO.OUT) # ctrclockwise rotation
 GPIO.setup(15, GPIO.OUT) # clockwise rotation
 
