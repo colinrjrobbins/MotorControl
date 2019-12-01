@@ -48,7 +48,7 @@ while True:
     print("6 - Change speed 100")
     print("7 - Turn Off")
     print("8 - Exit Program")
-    check = int(input("Option ==>")
+    check = int(input("Option ==>"))
 
     if check == 1:
         print("Turning on...")
