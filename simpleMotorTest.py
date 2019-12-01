@@ -36,36 +36,45 @@ GPIO.add_event_detect(11, GPIO.RISING, callback=reset_button)
 GPIO.output(13, True)
 GPIO.output(15, False)
 
+check = 0
+
 while True:
-    print('''MENU
-    1 - Turn On
-    2 - Turn Counter Clockwise
-    3 - Turn Clockwise
-    4 - Change speed 50
-    5 - Change speed 75
-    6 - Change speed 100
-    7 - Turn Off
-    8 - Exit Program
-    ''')
+    print("MENU")
+    print("1 - Turn On")
+    print("2 - Turn Counter Clockwise")
+    print("3 - Turn Clockwise")
+    print("4 - Change speed 50")
+    print("5 - Change speed 75")
+    print("6 - Change speed 100")
+    print("7 - Turn Off")
+    print("8 - Exit Program")
     check = int(input("Option ==>")
 
     if check == 1:
+        print("Turning on...")
         GPIO.output(12, True)
     elif check == 2:
+        print("Setting CTR Clockwise...")
         GPIO.output(13, True)
         GPIO.output(15, False)
     elif check == 3:
+        print("Setting Clockwise...")
         GPIO.output(13, False)
         GPIO.output(15, True)
     elif check == 4:
+        print("50 Speed...")
         pwm.ChangeDutyCycle(50)
     elif check == 5:
+        print("75 Speed...")
         pwm.ChangeDutyCycle(75)
     elif check == 6:
+        print("100 Speed")
         pwm.ChangeDutyCycle(100)
     elif check == 7:
+        print("Turning off...")
         GPIO.output(12, False)
     elif check == 8:
+        print("Exiting...")
         GPIO.output(12, False)
         GPIO.cleanup()
         exit()
