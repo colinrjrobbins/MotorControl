@@ -9,6 +9,7 @@ import time
 
 def emergency_button(channel):
     print("Emergency Stop")
+    GPIO.output(12, False)
 
 def reset_button(channel):
     print("Reset Button")
@@ -35,14 +36,39 @@ GPIO.add_event_detect(11, GPIO.RISING, callback=reset_button)
 GPIO.output(13, True)
 GPIO.output(15, False)
 
-pwm.ChangeDutyCycle(50)
+while True:
+    print('''MENU
+    1 - Turn On
+    2 - Turn Counter Clockwise
+    3 - Turn Clockwise
+    4 - Change speed 50
+    5 - Change speed 75
+    6 - Change speed 100
+    7 - Turn Off
+    8 - Exit Program
+    ''')
+    check = int(input("Option ==>")
 
-GPIO.output(12, True)
-
-time.sleep(2)
-
-GPIO.output(12, False)
-
-pwm.stop()
-
+    if check == 1:
+        GPIO.output(12, True)
+    elif check == 2:
+        GPIO.output(13, True)
+        GPIO.output(15, False)
+    elif check == 3:
+        GPIO.output(13, False)
+        GPIO.output(15, True)
+    elif check == 4:
+        pwm.ChangeDutyCycle(50)
+    elif check == 5:
+        pwm.ChangeDutyCycle(75)
+    elif check == 6:
+        pwm.ChangeDutyCycle(100)
+    elif check == 7:
+        GPIO.output(12, False)
+    elif check == 8:
+        GPIO.output(12, False)
+        GPIO.cleanup()
+        exit()
+    else:
+        print("Incorrect, try again.")
 GPIO.cleanup()
