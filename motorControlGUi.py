@@ -140,7 +140,8 @@ class MotorInterface():
         self.lblOutput["text"] = "Counter Clockwise Rotation Enable..."
 
     def ControlSpeed(self, value):
-        speedValue = 100 - value
+        speedValue = 100 - int(value)
+        print(str(speedValue))
         self.pwm.ChangeDutyCycle(speedValue)
 
     def EmergencyButton(self):
