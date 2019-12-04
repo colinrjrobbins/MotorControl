@@ -1,3 +1,11 @@
+# FIO4 - Pin 10 RPI // Emergency Or Reset
+# FIO3 - Pin 11 // Emergency or Reset
+# FIO2 - Pin 12 // Enable signal
+# FIO1 - Pin 13 // Counter Clockwise Rotation
+# FIO0 - Pin 15 // Clockwise Rotation
+# VS - Pin 2 // 5V in
+# GND - Pin 6 // Ground
+
 import RPi.GPIO as GPIO
 from tkinter import *
 import tkinter.messagebox

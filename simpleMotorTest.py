@@ -67,13 +67,13 @@ while True:
 
     if check == 1: # initialize the motor and start clockwise
         print("Turning on...")
-        GPIO.output(15, True)
-        GPIO.output(13, False)
+        GPIO.output(15, False)
+        GPIO.output(13, True)
         GPIO.output(12, True)
         pwm.ChangeDutyCycle(50)
     elif check == 2: # counterclockwise
         print("Setting CTR Clockwise...")
-        GPIO.output(13, True)
+        GPIO.output(13, True )
         GPIO.output(15, False)
     elif check == 3: # clockwise
         print("Setting Clockwise...")
