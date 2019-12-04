@@ -111,12 +111,21 @@ class MotorInterface():
         self.pwm.ChangeDutyCycle(50)
         self.lblOutput["text"] = "Turning on Motor..."
 
+        self.sclSpeedCtrl.config(state = NORMAL)
+        self.btnClockwise.config(state = NORMAL)
+        self.btnCtrClockwise.config(state = NORMAL)
+        self.btnStop.config(state = NORMAL)
+
     def StopMotor(self):
         print("Turning off...")
         GPIO.output(12, False)
         GPIO.output(13, True)
         GPIO.output(15, True)
         self.lblOutput["text"] = "Turning off Motor..."
+
+        self.sclSpeedCtrl.config(state = DISABLED)
+        self.btnClockwise.config(state = DISABLED)
+        self.btnCtrClockwise.config(state = DISABLED)
 
     def ClockwiseRotation(self):
         print("Setting Clockwise...")
