@@ -92,7 +92,7 @@ while True:
         print("100% Speed")
         pwm.ChangeDutyCycle(0)
     elif check == 8: # Stop the motor
-        GPIO.output(15, False)
+        GPIO.output(15, True)
         GPIO.output(13, True)
         GPIO.output(12, True)
         print("Turning off...")
