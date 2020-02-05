@@ -96,15 +96,15 @@ while True:
     elif check == 8:
         GPIO.output(13, False)
         GPIO.output(15, True)
-        time.sleep(2)
-        GPIO.output(13, True)
-        GPIO.output(15, True)
-        time.sleep(5)
-        GPIO.output(13, True)
-        GPIO.output(15, False)
-        time.sleep(2)
-        GPIO.output(13, True)
-        GPIO.output(15, True)
+        # time.sleep(2)
+        # GPIO.output(13, True)
+        # GPIO.output(15, True)
+        # time.sleep(5)
+        # GPIO.output(13, True)
+        # GPIO.output(15, False)
+        # time.sleep(2)
+        # GPIO.output(13, True)
+        # GPIO.output(15, True)
     elif check == 9:
         pass
     elif check == 10: # Stop the motor
