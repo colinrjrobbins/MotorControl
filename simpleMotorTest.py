@@ -27,9 +27,11 @@ def reprintMenu():
     print("5 - Change speed 25")
     print("6 - Change speed 10")
     print("7 - Change speed 100")
-    print("8 - Turn Off")
-    print("9 - Exit Program")
-    print("10 - Re Print Menu")
+    print("8 - Turn Motor 90 clkwise for 5 seconds then back")
+    print("9 - Turn Motor 90 ctrclkwise for 5 seconds then back")
+    print("10 - Turn Off")
+    print("11 - Exit Program")
+    print("12 - Re Print Menu")
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
@@ -91,19 +93,34 @@ while True:
     elif check == 7: # 100% spped
         print("100% Speed")
         pwm.ChangeDutyCycle(0)
-    elif check == 8: # Stop the motor
+    elif check == 8:
+        pwm.ChangeDutyCycle(90)
+        GPIO.output(13, False)
+        GPIO.output(15, True)
+        time.sleep(2)
+        GPIO.output(13, True)
+        GPIO.output(15, True)
+        time.sleep(5)
+        GPIO.output(13, True)
+        GPIO.output(15, False)
+        time.sleep(2)
+        GPIO.output(13, True)
+        GPIO.output(15, True)
+    elif check == 9:
+        pass
+    elif check == 10: # Stop the motor
         GPIO.output(15, True)
         GPIO.output(13, True)
         GPIO.output(12, True)
         print("Turning off...")
-    elif check == 9:
+    elif check == 11:
         print("Exiting...")
         GPIO.output(12, False)
         GPIO.output(13, True)
         GPIO.output(15, True)
         GPIO.cleanup()
         exit()
-    elif check == 10:
+    elif check == 12:
         reprintMenu()
     else:
         print("Incorrect, try again.")
