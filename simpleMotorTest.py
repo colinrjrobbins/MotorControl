@@ -1,10 +1,7 @@
-# FIO4 - Pin 10 RPI // Emergency Or Reset
-# FIO3 - Pin 11 // Emergency or Reset
 # FIO2 - Pin 12 // Enable signal
 # FIO1 - Pin 13 // Counter Clockwise Rotation
+# GND - Pin 14 // Ground
 # FIO0 - Pin 15 // Clockwise Rotation
-# VS - Pin 2 // 5V in
-# GND - Pin 6 // Ground
 
 import RPi.GPIO as GPIO
 import time
@@ -46,14 +43,6 @@ GPIO.setup(15, GPIO.OUT) # clockwise rotation
 
 # start off the Pulse width modulation at 100
 pwm.start(100) # start off with the speed at 0
-
-# button initialation
-GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-
-# button event detections for reset and for emergency button
-GPIO.add_event_detect(10, GPIO.RISING, callback=emergency_button)
-GPIO.add_event_detect(11, GPIO.RISING, callback=reset_button)
 
 # initialize for counter clockwise start
 GPIO.output(13, True)
