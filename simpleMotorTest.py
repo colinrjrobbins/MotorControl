@@ -94,7 +94,7 @@ while True:
         print("100% Speed")
         pwm.ChangeDutyCycle(0)
     elif check == 8:
-        pwm.ChangeDutyCycle(90)
+        pwm.ChangeDutyCycle(0)
         GPIO.output(13, False)
         GPIO.output(15, True)
         #time.sleep(2)
